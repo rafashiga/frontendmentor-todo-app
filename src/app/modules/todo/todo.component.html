@@ -1,0 +1,59 @@
+<div class="todo">
+  <header class="todo__header">
+    <h1>TODO</h1>
+    <button class="btn-theme" type="button">
+      <div class="btn-theme__icon"></div>
+    </button>
+  </header>
+  <section>
+    <form class="form">
+      <input type="text" class="input" placeholder="Create a new todo..." (keydown.enter)="addTodo($event)">
+      <span class="circle"></span>
+    </form>
+    <div class="todo__main">
+      <ul class="todo__list">
+        <li class="todo__item" *ngFor="let todo of data">
+          <div class="todo__item__checkbox">
+            <app-checkbox></app-checkbox>
+
+            <span>{{todo.description}}</span>
+          </div>
+
+          <button class="todo__delete" [attr.aria-label]="'delete ' + todo.description" (click)="deleteTodo(todo)">
+            <img src="../../../assets/images/icon-cross.svg" alt="delete" />
+          </button>
+        </li>
+      </ul>
+      <div class="todo__info">
+        <span class="todo__total">5 items left</span>
+        <ul class="todo__filter todo__filter--desktop">
+          <li>
+            <button type="button" class="active">All</button>
+          </li>
+          <li>
+            <button type="button">Active</button>
+          </li>
+          <li>
+            <button type="button">Completed</button>
+          </li>
+        </ul>
+        <button class="todo__clear" type="button">Clear Completed</button>
+      </div>
+    </div>
+
+    <div class="todo__filter-group">
+      <ul class="todo__filter">
+        <li>
+          <button type="button">All</button>
+        </li>
+        <li>
+          <button type="button">Active</button>
+        </li>
+        <li>
+          <button type="button">Completed</button>
+        </li>
+      </ul>
+    </div>
+
+  </section>
+</div>

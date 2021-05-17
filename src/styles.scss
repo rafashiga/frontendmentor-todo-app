@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root {
+  --color-primary: hsl(220, 98%, 61%);
+  --color-teal: hsl(192, 100%, 67%);
+  --color-pink: hsl(280, 87%, 65%);
+  --color-white: #fff;
+
+  --color-gray-100: hsl(0, 0%, 98%);
+  --color-grayish-blue-200: hsl(236, 33%, 92%);
+  --color-grayish-blue-300: hsl(233, 11%, 84%);
+  --color-grayish-blue-400: rgb(147, 148, 165);
+  --color-grayish-blue-800: hsl(235, 19%, 35%);
+
+  --background-desktop: url('./assets/images/bg-desktop-light.jpg');
+  --background-mobile: url('./assets/images/bg-mobile-light.jpg');
+
+  --icon-theme: url('./assets/images/icon-moon.svg');
+}
+
+:root[data-theme='dark'] {
+  --color-primary: hsl(220, 98%, 61%);
+  --color-teal: hsl(192, 100%, 67%);
+  --color-pink: hsl(280, 87%, 65%);
+
+  --color-gray-100: hsl(234, 39%, 85%);
+  --color-grayish-blue-200: hsl(236, 33%, 92%);
+  --color-grayish-blue-300: hsl(234, 11%, 52%);
+  --color-grayish-blue-400: hsl(233, 14%, 35%);
+  --color-grayish-blue-800: hsl(237, 14%, 26%);
+
+  --color-blue-800: hsl(235, 24%, 19%);
+  --color-blue-900: hsl(235, 21%, 11%);
+
+  --background-desktop: url('./assets/images/bg-desktop-light.jpg');
+  --background-mobile: url('./assets/images/bg-mobile-dark.jpg');
+
+  --icon-theme: url('./assets/images/icon-sun.svg');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html.transition,
+html.transition *,
+html.transition *:before,
+html.transition *:after {
+  transition: all 750ms !important;
+  transition-delay: 0 !important;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--color-grayish-blue-800);
+
+  background: var(--color-gray-100);
+  min-height: 100vh;
+}
+
+input,
+a,
+button {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+a,
+button {
+  cursor: pointer;
+}
