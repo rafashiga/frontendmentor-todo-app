@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  font-size: 0.875rem;
+
+  a {
+    color: var(--color-primary);
+    transition: all 0.3s;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

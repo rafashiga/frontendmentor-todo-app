@@ -76,7 +76,6 @@ body {
   color: var(--text-color);
 
   background: var(--background);
-  min-height: 100vh;
 
   @include desktop-sm {
     font-size: 18px;
