@@ -94,6 +94,14 @@ export class TodoComponent implements OnInit {
     this.filter(this.filterType);
   }
 
+  getTotalNotCompleted(): number {
+    return this.data.reduce((total, item) => {
+      if (!item.isCompleted) return (total += 1);
+
+      return total;
+    }, 0);
+  }
+
   toggleTheme(): void {
     document.documentElement.classList.add('transition');
     window.setTimeout(() => {

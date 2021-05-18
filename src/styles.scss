@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use 'src/assets/styles/mixins' as *;
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
 
 :root {
@@ -67,15 +68,19 @@ html.transition *:after {
   transition: all 750ms !important;
   transition-delay: 0 !important;
 }
-
+html,
 body {
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 400;
   color: var(--text-color);
 
   background: var(--background);
   min-height: 100vh;
+
+  @include desktop-sm {
+    font-size: 18px;
+  }
 }
 
 input,
@@ -83,7 +88,7 @@ a,
 button {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 1em;
 }
 
 a,

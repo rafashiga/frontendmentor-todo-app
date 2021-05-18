@@ -44,7 +44,7 @@
         </li>
       </ul>
       <div class="todo__info">
-        <span class="todo__total">{{ data?.length }} items left</span>
+        <span class="todo__total">{{ getTotalNotCompleted() }} items left</span>
         <ul class="todo__filter todo__filter--desktop">
           <li>
             <button
@@ -83,13 +83,31 @@
     <div class="todo__filter-group">
       <ul class="todo__filter">
         <li>
-          <button type="button">All</button>
+          <button
+            type="button"
+            [class.active]="filterType === 'ALL'"
+            (click)="filter('ALL')"
+          >
+            All
+          </button>
         </li>
         <li>
-          <button type="button">Active</button>
+          <button
+            type="button"
+            [class.active]="filterType === 'ACTIVE'"
+            (click)="filter('ACTIVE')"
+          >
+            Active
+          </button>
         </li>
         <li>
-          <button type="button">Completed</button>
+          <button
+            type="button"
+            [class.active]="filterType === 'COMPLETED'"
+            (click)="filter('COMPLETED')"
+          >
+            Completed
+          </button>
         </li>
       </ul>
     </div>
