@@ -21,7 +21,7 @@
   <br>
   <h3 align="center">
     <strong>
-      <a href="https://shiga-faq-accordion-card.netlify.app/" target="_blank">
+      <a href="https://shiga-todo-app.netlify.app/" target="_blank">
         visit
       </a>
     </strong>
