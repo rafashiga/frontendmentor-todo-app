@@ -38,7 +38,7 @@
   background-size: 100%;
   min-height: 90vh;
 
-  padding: rem(56) rem(24);
+  padding: rem(60) rem(32);
 
   @include desktop-sm {
     background-image: var(--background-desktop);
@@ -190,12 +190,12 @@
 
 .form {
   position: relative;
-  margin-top: rem(24);
+  margin-top: rem(48);
 
   @include desktop-sm {
     width: 50%;
     margin: 0 auto;
-    margin-top: rem(24);
+    margin-top: rem(48);
   }
 
   .input {
