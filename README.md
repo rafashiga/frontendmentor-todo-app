@@ -1,27 +1,36 @@
-# FrontendmentorTodoApp
+<h1 align="center">
+  Frontend Mentor - TODO
+</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+<h3 align="center">
+<strong>Project based on <a href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank">Frontend Mentor</a></strong>
+</h3>
 
-## Development server
+<p align="center">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+  <img alt="top language" src="https://img.shields.io/github/languages/top/rafashiga/frontendmentor-todo-app?style=flat-square">
+  <img alt="language count" src="https://img.shields.io/github/languages/count/rafashiga/frontendmentor-todo-app?style=flat-square">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/rafashiga/frontendmentor-todo-app?style=flat-square">
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/rafashiga/frontendmentor-todo-app?style=flat-square">
+  <br>
+  <br>
+  <a href="#space_invader-technologies">Technologies</a>
+  <br>
+  <br>
+  <img src="./src/assets/images/website.png">
+  <br>
+  <h3 align="center">
+    <strong>
+      <a href="https://shiga-faq-accordion-card.netlify.app/" target="_blank">
+        visit
+      </a>
+    </strong>
+  </h3>
+</p>
 
-## Code scaffolding
+## :space_invader: Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- HTML
+- SASS
+- Typescript
