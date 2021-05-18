@@ -23,7 +23,7 @@
     height: rem(25);
     width: rem(25);
     border-radius: 50%;
-    border: 1px solid var(--color-grayish-blue-300);
+    border: 1px solid var(--color-gray-300);
     transition: all 0.3s;
 
     /* Create the checkmark/indicator (hidden when not checked) */
@@ -35,7 +35,11 @@
   }
 
   input:checked ~ .checkmark {
-    background: linear-gradient(#fff, #fff) padding-box,
+    background: linear-gradient(
+          var(--card-background-color),
+          var(--card-background-color)
+        )
+        padding-box,
       linear-gradient(140deg, var(--color-teal), var(--color-pink)) border-box;
     border: 1px solid transparent;
     display: inline-block;
@@ -43,7 +47,11 @@
 
   /* On mouse-over, add a grey background color */
   &:hover input ~ .checkmark {
-    background: linear-gradient(#fff, #fff) padding-box,
+    background: linear-gradient(
+          var(--card-background-color),
+          var(--card-background-color)
+        )
+        padding-box,
       linear-gradient(140deg, var(--color-teal), var(--color-pink)) border-box;
     border: 1px solid transparent;
     display: inline-block;

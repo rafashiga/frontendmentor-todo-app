@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  styleUrls: ['./checkbox.component.scss'],
 })
-export class CheckboxComponent implements OnInit {
+export class CheckboxComponent {
+  @Output() checkboxClick = new EventEmitter();
+  @Input() isChecked = false;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  toggleCheckbox(event: any): void {
+    this.checkboxClick.emit(event);
   }
-
 }

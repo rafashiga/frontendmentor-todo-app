@@ -12,6 +12,9 @@ interface ITodo {
   styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent implements OnInit {
+  theme = 'light mode';
+  isDarkMode = false;
+
   data: ITodo[] = [
     {
       description: 'Complete online JavaScript course',
@@ -45,11 +48,16 @@ export class TodoComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  ngOnInit(): void {
+    const theme = localStorage.getItem('theme');
+    this.isDarkMode = theme === 'dark' ?? false;
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', theme);
+      this.theme = 'dark mode';
+    }
+  }
 
-  ngOnInit(): void {}
-
-  addTodo(event: any) {
+  addTodo(event: any): void {
     event.preventDefault();
     const newTodo = {
       description: event.target.value,
@@ -62,9 +70,36 @@ export class TodoComponent implements OnInit {
     input.value = '';
   }
 
-  deleteTodo(todo: ITodo) {
+  deleteTodo(todo: ITodo): void {
     const newData = this.data.filter((item) => todo.order !== item.order);
-
     this.data = newData;
+  }
+
+  toggleTheme(): void {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('transition');
+    }, 1000);
+
+    if (!this.isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      this.theme = 'light mode';
+      this.isDarkMode = true;
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      this.theme = 'dark mode';
+      this.isDarkMode = false;
+      localStorage.removeItem('theme');
+    }
+  }
+
+  toggleCheckbox(event: any, todo: ITodo): void {
+    const isChecked = event.target.checked;
+    this.data.forEach((item) => {
+      if (item.order === todo.order) {
+        item.isCompleted = isChecked;
+      }
+    });
   }
 }

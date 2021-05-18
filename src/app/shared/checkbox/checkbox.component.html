@@ -1,4 +1,8 @@
 <label class="checkbox-container">
-  <input type="checkbox">
+  <input
+    type="checkbox"
+    (change)="toggleCheckbox($event)"
+    [checked]="isChecked"
+  />
   <span class="checkmark"></span>
 </label>

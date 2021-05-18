@@ -6,12 +6,21 @@
   --color-teal: hsl(192, 100%, 67%);
   --color-pink: hsl(280, 87%, 65%);
   --color-white: #fff;
+  --color-gray-300: hsl(233, 11%, 84%);
 
-  --color-gray-100: hsl(0, 0%, 98%);
-  --color-grayish-blue-200: hsl(236, 33%, 92%);
-  --color-grayish-blue-300: hsl(233, 11%, 84%);
-  --color-grayish-blue-400: rgb(147, 148, 165);
-  --color-grayish-blue-800: hsl(235, 19%, 35%);
+  --filter-text-color: hsl(236, 9%, 61%);
+  --filter-hover-color: hsl(235, 19%, 35%);
+
+  --text-color: hsl(235, 19%, 35%);
+  --placeholder-color: hsl(236, 9%, 61%);
+
+  --background: hsl(0, 0%, 98%);
+
+  --card-background-color: #fff;
+  --card-border-color: hsl(236, 33%, 92%);
+  --card-shadow-color: rgb(200, 200, 200);
+
+  --item-completed: hsl(233, 11%, 84%);
 
   --background-desktop: url('./assets/images/bg-desktop-light.jpg');
   --background-mobile: url('./assets/images/bg-mobile-light.jpg');
@@ -23,17 +32,23 @@
   --color-primary: hsl(220, 98%, 61%);
   --color-teal: hsl(192, 100%, 67%);
   --color-pink: hsl(280, 87%, 65%);
+  --color-gray-300: hsl(233, 14%, 35%);
 
-  --color-gray-100: hsl(234, 39%, 85%);
-  --color-grayish-blue-200: hsl(236, 33%, 92%);
-  --color-grayish-blue-300: hsl(234, 11%, 52%);
-  --color-grayish-blue-400: hsl(233, 14%, 35%);
-  --color-grayish-blue-800: hsl(237, 14%, 26%);
+  --filter-text-color: hsl(234, 11%, 52%);
+  --filter-hover-color: hsl(236, 33%, 92%);
 
-  --color-blue-800: hsl(235, 24%, 19%);
-  --color-blue-900: hsl(235, 21%, 11%);
+  --text-color: hsl(234, 39%, 85%);
+  --placeholder-color: hsl(236, 9%, 61%);
 
-  --background-desktop: url('./assets/images/bg-desktop-light.jpg');
+  --background: hsl(235, 21%, 11%);
+
+  --card-background-color: hsl(235, 24%, 19%);
+  --card-border-color: hsl(237, 14%, 26%);
+  --card-shadow-color: rgb(14, 14, 14);
+
+  --item-checked: hsl(233, 14%, 35%);
+
+  --background-desktop: url('./assets/images/bg-desktop-dark.jpg');
   --background-mobile: url('./assets/images/bg-mobile-dark.jpg');
 
   --icon-theme: url('./assets/images/icon-sun.svg');
@@ -57,9 +72,9 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: var(--color-grayish-blue-800);
+  color: var(--text-color);
 
-  background: var(--color-gray-100);
+  background: var(--background);
   min-height: 100vh;
 }
 

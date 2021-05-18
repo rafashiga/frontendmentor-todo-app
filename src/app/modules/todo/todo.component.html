@@ -1,31 +1,50 @@
 <div class="todo">
   <header class="todo__header">
     <h1>TODO</h1>
-    <button class="btn-theme" type="button">
+    <button
+      class="btn-theme"
+      type="button"
+      aria-label="toggle theme"
+      (click)="toggleTheme()"
+    >
       <div class="btn-theme__icon"></div>
     </button>
   </header>
   <section>
     <form class="form">
-      <input type="text" class="input" placeholder="Create a new todo..." (keydown.enter)="addTodo($event)">
+      <input
+        type="text"
+        class="input"
+        placeholder="Create a new todo..."
+        (keydown.enter)="addTodo($event)"
+      />
       <span class="circle"></span>
     </form>
-    <div class="todo__main">
+    <div class="todo__card">
       <ul class="todo__list">
         <li class="todo__item" *ngFor="let todo of data">
           <div class="todo__item__checkbox">
-            <app-checkbox></app-checkbox>
+            <app-checkbox
+              (checkboxClick)="toggleCheckbox($event, todo)"
+              [isChecked]="todo.isCompleted"
+            ></app-checkbox>
 
-            <span>{{todo.description}}</span>
+            <span [class.item-completed]="todo.isCompleted">
+              {{ todo.description }}
+            </span>
           </div>
 
-          <button class="todo__delete" [attr.aria-label]="'delete ' + todo.description" (click)="deleteTodo(todo)">
+          <button
+            class="todo__delete"
+            [attr.aria-label]="'delete ' + todo.description"
+            (click)="deleteTodo(todo)"
+          >
             <img src="../../../assets/images/icon-cross.svg" alt="delete" />
           </button>
         </li>
       </ul>
       <div class="todo__info">
-        <span class="todo__total">5 items left</span>
+        <span class="todo__total">{{ data?.length }} items left</span>
         <ul class="todo__filter todo__filter--desktop">
           <li>
             <button type="button" class="active">All</button>
@@ -54,6 +73,5 @@
         </li>
       </ul>
     </div>
-
   </section>
 </div>
