@@ -1,5 +1,5 @@
 <div class="todo">
-  <header class="todo__header">
+  <header class="header">
     <h1>TODO</h1>
     <button
       class="btn-theme"
@@ -22,7 +22,7 @@
     </form>
     <div class="todo__card">
       <ul class="todo__list">
-        <li class="todo__item" *ngFor="let todo of data">
+        <li class="todo__item" *ngFor="let todo of dataFiltered">
           <div class="todo__item__checkbox">
             <app-checkbox
               (checkboxClick)="toggleCheckbox($event, todo)"
@@ -47,13 +47,31 @@
         <span class="todo__total">{{ data?.length }} items left</span>
         <ul class="todo__filter todo__filter--desktop">
           <li>
-            <button type="button" class="active">All</button>
+            <button
+              type="button"
+              [class.active]="filterType === 'ALL'"
+              (click)="filter('ALL')"
+            >
+              All
+            </button>
           </li>
           <li>
-            <button type="button">Active</button>
+            <button
+              type="button"
+              [class.active]="filterType === 'ACTIVE'"
+              (click)="filter('ACTIVE')"
+            >
+              Active
+            </button>
           </li>
           <li>
-            <button type="button">Completed</button>
+            <button
+              type="button"
+              [class.active]="filterType === 'COMPLETED'"
+              (click)="filter('COMPLETED')"
+            >
+              Completed
+            </button>
           </li>
         </ul>
         <button class="todo__clear" type="button">Clear Completed</button>

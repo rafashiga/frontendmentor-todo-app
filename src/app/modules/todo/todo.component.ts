@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+enum FilterType {
+  ALL = 'ALL',
+  ACTIVE = 'ACTIVE',
+  COMPLETED = 'COMPLETED',
+}
+
 interface ITodo {
   description: string;
   isCompleted: boolean;
@@ -14,7 +20,9 @@ interface ITodo {
 export class TodoComponent implements OnInit {
   theme = 'light mode';
   isDarkMode = false;
+  filterType: string = FilterType.ALL;
 
+  dataFiltered!: ITodo[];
   data: ITodo[] = [
     {
       description: 'Complete online JavaScript course',
@@ -42,13 +50,15 @@ export class TodoComponent implements OnInit {
       order: 5,
     },
     {
-      description: 'Complete Todo App onm Frontend Mentor',
+      description: 'Complete Todo App on Frontend Mentor',
       isCompleted: false,
       order: 6,
     },
   ];
 
   ngOnInit(): void {
+    this.dataFiltered = this.data;
+
     const theme = localStorage.getItem('theme');
     this.isDarkMode = theme === 'dark' ?? false;
     if (theme === 'dark') {
@@ -68,11 +78,18 @@ export class TodoComponent implements OnInit {
     this.data.push(newTodo);
     const input = document.querySelector('.input') as HTMLInputElement;
     input.value = '';
+
+    this.filter(this.filterType);
   }
 
   deleteTodo(todo: ITodo): void {
     const newData = this.data.filter((item) => todo.order !== item.order);
     this.data = newData;
+    this.filter(this.filterType);
+  }
+
+  cleanCompleted(): void {
+    this.dataFiltered = this.data.filter((item) => item.isCompleted === false);
   }
 
   toggleTheme(): void {
@@ -101,5 +118,25 @@ export class TodoComponent implements OnInit {
         item.isCompleted = isChecked;
       }
     });
+  }
+
+  filter(type: string): void {
+    this.filterType = type;
+
+    switch (type) {
+      case FilterType.ACTIVE:
+        this.dataFiltered = this.data.filter(
+          (item) => item.isCompleted === false
+        );
+        break;
+      case FilterType.COMPLETED:
+        this.dataFiltered = this.data.filter(
+          (item) => item.isCompleted === true
+        );
+        break;
+      default:
+        this.dataFiltered = this.data;
+        break;
+    }
   }
 }

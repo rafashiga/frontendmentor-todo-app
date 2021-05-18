@@ -1,5 +1,36 @@
 @use 'src/assets/styles/mixins' as *;
 
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--color-white);
+
+  @include desktop-sm {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    letter-spacing: 1rem;
+  }
+
+  .btn-theme {
+    background: none;
+    border: none;
+
+    &__icon {
+      background: var(--icon-theme) no-repeat;
+      width: rem(30);
+      height: rem(30);
+    }
+  }
+}
+
+/* TODO */
+
 .todo {
   background-image: var(--background-mobile);
   background-repeat: no-repeat;
@@ -10,23 +41,6 @@
 
   @include desktop-sm {
     background-image: var(--background-desktop);
-  }
-
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    color: var(--color-white);
-
-    h1 {
-      letter-spacing: 1rem;
-    }
-
-    @include desktop-sm {
-      width: 50%;
-      margin: 0 auto;
-    }
   }
 
   &__card {
@@ -152,16 +166,7 @@
   }
 }
 
-.btn-theme {
-  background: none;
-  border: none;
-
-  &__icon {
-    background: var(--icon-theme) no-repeat;
-    width: rem(30);
-    height: rem(30);
-  }
-}
+/* FORM  */
 
 .form {
   position: relative;
