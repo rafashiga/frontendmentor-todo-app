@@ -208,6 +208,8 @@
     border-radius: rem(5);
     font-weight: 400;
 
+    color: var(--text-color);
+
     &::placeholder {
       color: var(--placeholder-color);
       font-weight: 400;
