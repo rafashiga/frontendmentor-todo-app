@@ -88,8 +88,10 @@ export class TodoComponent implements OnInit {
     this.filter(this.filterType);
   }
 
-  cleanCompleted(): void {
+  clearCompleted(): void {
     this.dataFiltered = this.data.filter((item) => item.isCompleted === false);
+    this.data = this.dataFiltered;
+    this.filter(this.filterType);
   }
 
   toggleTheme(): void {
