@@ -42,4 +42,15 @@ describe('TodoComponent', () => {
 
     expect(component.data.length).toBe(7);
   });
+
+  it('should delete a todo', () => {
+    const todo = {
+      description: 'Complete Todo App on Frontend Mentor',
+      isCompleted: false,
+      order: 6,
+    };
+    component.deleteTodo(todo);
+
+    expect(component.data.length).toBe(5);
+  });
 });
