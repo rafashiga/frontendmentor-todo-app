@@ -53,4 +53,12 @@ describe('TodoComponent', () => {
 
     expect(component.data.length).toBe(5);
   });
+
+  it('should clean completed todo', () => {
+    component.data[5].isCompleted = true;
+
+    component.clearCompleted();
+
+    expect(component.data.length).toBe(5);
+  });
 });
