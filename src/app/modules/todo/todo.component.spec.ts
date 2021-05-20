@@ -30,4 +30,16 @@ describe('TodoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add a todo', () => {
+    const event = {
+      preventDefault: () => null,
+      target: {
+        value: 'any_value',
+      },
+    };
+    component.addTodo(event);
+
+    expect(component.data.length).toBe(7);
+  });
 });
