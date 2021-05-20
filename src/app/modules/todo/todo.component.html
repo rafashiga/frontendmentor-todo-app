@@ -21,8 +21,8 @@
       <span class="circle"></span>
     </form>
     <div class="todo__card">
-      <ul class="todo__list">
-        <li class="todo__item" *ngFor="let todo of dataFiltered">
+      <ul class="todo__list" cdkDropList (cdkDropListDropped)="drop($event)">
+        <li class="todo__item" *ngFor="let todo of dataFiltered" cdkDrag>
           <div class="todo__item__checkbox">
             <app-checkbox
               (checkboxClick)="toggleCheckbox($event, todo)"
@@ -111,5 +111,6 @@
         </li>
       </ul>
     </div>
+    <p class="information">Drag and drop to reorder list</p>
   </section>
 </div>

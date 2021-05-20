@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 enum FilterType {
   ALL = 'ALL',
@@ -148,5 +149,9 @@ export class TodoComponent implements OnInit {
         this.dataFiltered = this.data;
         break;
     }
+  }
+
+  drop(event: any): void {
+    moveItemInArray(this.dataFiltered, event.previousIndex, event.currentIndex);
   }
 }
