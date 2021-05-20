@@ -67,4 +67,21 @@ describe('TodoComponent', () => {
 
     expect(result).toBe(6);
   });
+
+  it('should toggleCheckbox set isCompleted to true if todo is not completed', () => {
+    const event = {
+      target: {
+        checked: true,
+      },
+    };
+
+    const todo = {
+      description: 'Complete Todo App on Frontend Mentor',
+      isCompleted: false,
+      order: 6,
+    };
+    component.toggleCheckbox(event, todo);
+
+    expect(component.data[5].isCompleted).toBeTruthy();
+  });
 });
