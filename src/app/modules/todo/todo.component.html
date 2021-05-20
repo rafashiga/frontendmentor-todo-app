@@ -4,7 +4,7 @@
     <button
       class="btn-theme"
       type="button"
-      aria-label="toggle theme"
+      [attr.aria-label]="'change theme to ' + theme"
       (click)="toggleTheme()"
     >
       <div class="btn-theme__icon"></div>
