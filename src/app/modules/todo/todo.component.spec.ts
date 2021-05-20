@@ -31,6 +31,17 @@ describe('TodoComponent', () => {
     expect(component).toBeTruthy();
   });
 
+  it('should change theme to dark mode', () => {
+    component.toggleTheme();
+    expect(component.isDarkMode).toBeTruthy();
+  });
+
+  it('should change theme to light mode', () => {
+    component.isDarkMode = true;
+    component.toggleTheme();
+    expect(component.isDarkMode).toBeFalsy();
+  });
+
   it('should add a todo', () => {
     const event = {
       preventDefault: () => null,

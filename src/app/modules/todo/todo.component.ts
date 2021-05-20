@@ -67,6 +67,25 @@ export class TodoComponent implements OnInit {
     }
   }
 
+  toggleTheme(): void {
+    document.documentElement.classList.add('transition');
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('transition');
+    }, 1000);
+
+    if (!this.isDarkMode) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      this.theme = 'light mode';
+      this.isDarkMode = true;
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      this.theme = 'dark mode';
+      this.isDarkMode = false;
+      localStorage.removeItem('theme');
+    }
+  }
+
   addTodo(event: any): void {
     event.preventDefault();
     const newTodo = {
@@ -100,25 +119,6 @@ export class TodoComponent implements OnInit {
 
       return total;
     }, 0);
-  }
-
-  toggleTheme(): void {
-    document.documentElement.classList.add('transition');
-    window.setTimeout(() => {
-      document.documentElement.classList.remove('transition');
-    }, 1000);
-
-    if (!this.isDarkMode) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      this.theme = 'light mode';
-      this.isDarkMode = true;
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      this.theme = 'dark mode';
-      this.isDarkMode = false;
-      localStorage.removeItem('theme');
-    }
   }
 
   toggleCheckbox(event: any, todo: ITodo): void {
