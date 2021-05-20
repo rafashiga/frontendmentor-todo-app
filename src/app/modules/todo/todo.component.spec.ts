@@ -84,4 +84,24 @@ describe('TodoComponent', () => {
 
     expect(component.data[5].isCompleted).toBeTruthy();
   });
+
+  describe('filter', () => {
+    it('should show only active todo', () => {
+      component.data[5].isCompleted = true;
+      component.filter('ACTIVE');
+      expect(component.dataFiltered.length).toBe(5);
+    });
+
+    it('should show only completed todo', () => {
+      component.data[5].isCompleted = true;
+      component.filter('COMPLETED');
+      expect(component.dataFiltered.length).toBe(1);
+    });
+
+    it('should show all todo', () => {
+      component.data[5].isCompleted = true;
+      component.filter('ALL');
+      expect(component.dataFiltered.length).toBe(6);
+    });
+  });
 });
