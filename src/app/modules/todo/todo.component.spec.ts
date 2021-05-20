@@ -61,4 +61,10 @@ describe('TodoComponent', () => {
 
     expect(component.data.length).toBe(5);
   });
+
+  it('should get total todo not completed', () => {
+    const result = component.getTotalNotCompleted();
+
+    expect(result).toBe(6);
+  });
 });
