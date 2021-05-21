@@ -90,6 +90,14 @@ button {
   font-size: 1rem;
 }
 
+p {
+  font-size: 1rem;
+
+  @include desktop-sm {
+    font-size: rem(12);
+  }
+}
+
 a,
 button {
   cursor: pointer;

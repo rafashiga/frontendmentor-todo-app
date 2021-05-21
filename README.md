@@ -19,6 +19,8 @@
   <br>
   <img src="./src/assets/images/website.png">
   <br>
+  <img src="./src/assets/images/website-dark.png">
+  <br>
   <h3 align="center">
     <strong>
       <a href="https://shiga-todo-app.netlify.app/" target="_blank">
