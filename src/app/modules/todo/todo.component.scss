@@ -102,12 +102,20 @@
     }
 
     @include desktop-sm {
-      display: none;
+      img {
+        display: none;
+      }
+
+      &:focus img {
+        display: initial;
+      }
     }
   }
 
   &__item:hover &__delete {
-    display: initial;
+    img {
+      display: initial;
+    }
   }
 
   &__info {
