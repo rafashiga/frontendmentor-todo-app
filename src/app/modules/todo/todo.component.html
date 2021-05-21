@@ -11,15 +11,16 @@
     </button>
   </header>
   <section>
-    <form class="form">
+    <div class="form">
       <input
         type="text"
         class="input"
         placeholder="Create a new todo..."
+        aria-label="Create a new todo. Press enter to submit"
         (keydown.enter)="addTodo($event)"
       />
       <span class="circle"></span>
-    </form>
+    </div>
     <div class="todo__card">
       <ul class="todo__list" cdkDropList (cdkDropListDropped)="drop($event)">
         <li class="todo__item" *ngFor="let todo of dataFiltered" cdkDrag>
