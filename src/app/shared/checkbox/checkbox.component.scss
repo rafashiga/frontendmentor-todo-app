@@ -15,6 +15,10 @@
     width: 0;
   }
 
+  input:focus + .checkmark {
+    outline: auto;
+  }
+
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
